@@ -1,0 +1,6 @@
+# Masthead tabs
+masthead_tabs:
+  - title: "Sample Posts"
+    url: /sample-posts/
+  - title: "About"
+    url: /about/

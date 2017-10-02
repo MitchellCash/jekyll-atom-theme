@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    </head>
+    <body>
+      <div class="container">
+        <div class="site-title">
+          <a class="title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        </div>
+        <div class="top-nav">
+          <div class="nav-content">
+            <ul class="left tabs tabs-transparent">
+              {% for link in site.data.navigation.masthead_tabs %}
+                {% if link.url contains 'http' %}
+                  {% assign domain = '' %}
+                {% else %}
+                  {% assign domain = site.url | append: site.baseurl %}
+                {% endif %}
+                <li class="tab {% if page.title == link.title %} active {% endif %}"><a {% if page.title == link.title %} class="active" {% endif %} href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="nav-spacer">
+        </div>
+        <div class="side-nav">
+        </div>
+        <div class="content {% if page.id == "home" %} home-content {% else %} page-content {% endif %}">
+          <pre>
+            {{ content }}
+          </pre>
+        </div>
+        <div class="page-title">
+          {% if page.id != "home" %} {{ page.title }} {% endif %}
+        </div>
+        <div class="social">
+          {% if site.author.github %}
+            <a class="social-icons" href="https://github.com/{{ site.author.github }}"><i class="fa fa-github"></i> GitHub</a>
+          {% endif %}
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          © 2017 Copyright {{ site.title }}
+        </div>
+      </div>
+    </body>
+</html>

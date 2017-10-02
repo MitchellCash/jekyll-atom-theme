@@ -1,0 +1,8 @@
+# Masthead tabs
+masthead_tabs:
+  - title: "Quick Start Guide"
+    url: /quick-start-guide/
+  - title: "Sample Posts"
+    url: /sample-posts/
+  - title: "About"
+    url: /about/
